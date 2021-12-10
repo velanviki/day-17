@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+
+<body>
+<h2 style="text-align: center;">Tic-Tac-Toe</h2>
+    <script>
+        var cp = "O";
+        var board = document.createElement("div");
+        board.style.height = "100px";
+        board.style.width = "400px";
+        board.style.display = "flex";
+        board.style.flexWrap = "wrap";
+        board.style.marginLeft = "36%"
+        board.style.marginTop = "5%"
+       
+        
+
+
+        for (let i = 0; i < 9; i++) {
+            var box = document.createElement("div");
+            box.style.height = "33%";
+            box.style.width = "32%";
+            box.style.backgroundColor = "darkcyan"
+          
+            box.style.border="1px solid black"
+            
+            box.style.paddingTop = "100px"
+            box.style.textAlign="center"
+            box.style.verticalAlign="super"
+          
+            box.style.fontSize="200%"
+            
+            
+            
+
+            box.setAttribute("id", i);
+            box.addEventListener("click", function () {
+                if (this.innerText.length == 0) {
+
+
+                    if (cp == "X") {
+                        this.innerText = cp;
+                        cp = "O";
+                    }
+                    else {
+                        this.innerText = cp;
+                        cp = "X";
+                    }
+                }
+            })
+
+
+            board.appendChild(box);
+        }
+        document.body.appendChild(board);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
